@@ -1,7 +1,7 @@
 //Esercizio costruttori 
 import java.util.Scanner;
 
-public class ES15 {
+public class Auto {
     private String modello;
     private String colore;
     private int annoDiProduzione;
