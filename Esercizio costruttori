@@ -4,17 +4,17 @@ import java.util.Scanner;
 public class Auto {
     private String modello;
     private String colore;
-    private int annoDiProduzione;
+    private int annoCorrente;
 
     //1 costruttore 
     public Auto() {
         this.modello = "Modello sconosciuto";
         this.colore = "Non specificato";
-        this.annoDiProduzione = chiediAnnoDiProduzione();
+        this.annoCorrente = chiediAnnoCorrente();
     }
 
     // Metodo per chiedere all'utente l'anno 
-    public int chiediAnnoDiProduzione() {
+    public int chiediAnnoCorrente() {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Inserisci l'anno corrente: ");
