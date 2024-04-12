@@ -1,0 +1,44 @@
+//Esercizio costruttori 
+import java.util.Scanner;
+
+public class ES15 {
+    private String modello;
+    private String colore;
+    private int annoDiProduzione;
+
+    //1 costruttore 
+    public Auto() {
+        this.modello = "Modello sconosciuto";
+        this.colore = "Non specificato";
+        this.annoDiProduzione = chiediAnnoDiProduzione();
+    }
+
+    // Metodo per chiedere all'utente l'anno 
+    public int chiediAnnoDiProduzione() {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Inserisci l'anno corrente: ");
+
+        String annoCorrente = scanner.nextLine();
+        
+        scanner.close();
+    }
+
+
+
+        //2 costruttore 
+        public Auto(String modello, int anno){
+            this.modello = modello;
+            this.anno = anno;
+            this.colore = "Bianco";
+        }
+
+        //3 costruttore che inizializza i 3 parametri 
+        public Auto(String modelloAuto, String colore, int anno){
+            this.modelloAuto = modelloAuto;
+            this.colore = colore;
+            this.annoDiProduzione = annoDiProduzione;
+        
+    }
+    
+}
