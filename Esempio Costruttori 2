@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Robot {
+    private String nome;
+    private String funzione;
+    private int annoDiCreazione;
+    private String livelloEnergia;
+
+
+    public Robot(){
+        this.nome = "Robot generico";
+        this.funzione = "Assistenza";
+        this.annoDiCreazione = chiediAnnoCorrente()
+        this.livelloEnergia = "100%";
+    }
+
+
+    // Metodo per chiedere all'utente l'anno 
+    public int chiediAnnoDiProduzione() {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Inserisci l'anno corrente: ");
+
+        String annoCorrente = scanner.nextLine();
+        
+        scanner.close();
+    }
+
+    public Robot(String nome, int annoDiCreazione){
+        this.nome = nome;
+        this.annoDiCreazione = annoDiCreazione;
+        this.funzione = "Sorveglianza";
+        this.livelloEnergia = "100%";
+    }
+
+    public Robot(String nome, int annoDiCreazione,String funzione, String livelloEnergia){
+        this.nome = nome;
+        this.annoDiCreazione = annoDiCreazione;
+        this.funzione = funzione;
+        this.livelloEnergia = livelloEnergia; 
+}
+}
