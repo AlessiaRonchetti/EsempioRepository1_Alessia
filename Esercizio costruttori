@@ -19,7 +19,7 @@ public class Auto {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Inserisci l'anno corrente: ");
 
-        String annoCorrente = scanner.nextLine();
+        String annoCorrente = scanner.nextInt();
         
         scanner.close();
     }
