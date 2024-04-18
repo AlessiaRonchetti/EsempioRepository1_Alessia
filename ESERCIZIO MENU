@@ -1,0 +1,85 @@
+import java.util.ArrayList;
+
+class Piatto {
+    private String nome;
+    private int prezzo;
+    private String[] ingredienti;
+
+    public Piatto(String nome, int prezzo, String[] ingredienti) {
+        this.nome = nome;
+        this.prezzo = prezzo;
+        this.ingredienti = ingredienti;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String[] getIngredienti() {
+        return ingredienti;
+    }
+
+    public int getPrezzo() {
+        return prezzo;
+    }
+}
+
+class Menu {
+    private ArrayList<Piatto> piatti;
+
+    public Menu() {
+        this.piatti = new ArrayList<>();
+    }
+
+    public void aggiungiPiatto(Piatto p) {
+        piatti.add(p);
+    }
+
+    public ArrayList<Piatto> getPiatti() {
+        return piatti;
+    }
+}
+
+public class Ordinazione {
+    private Menu menu;
+
+    public Ordinazione(Menu menu) {
+        this.menu = menu;
+    }
+
+    public int calcoloPrezzoTot() {
+        int prezzoTot = 0;
+        for (Piatto p : menu.getPiatti()) {
+            prezzoTot += p.getPrezzo();
+        }
+        return prezzoTot;
+    }
+
+    public static void main(String[] args) {
+        Menu menu = new Menu();
+
+        String[] ingredientiPasta = { "pasta", "pesto", "formaggio" };
+        String[] ingredientiPizza = { "impasto", "pomodoro", "mozzarella", "salamino" };
+
+        Piatto pasta = new Piatto("pasta al pesto", 12, ingredientiPasta);
+        menu.aggiungiPiatto(pasta);
+
+        Piatto pizzaDiavola = new Piatto("pizza diavola", 7, ingredientiPizza);
+        menu.aggiungiPiatto(pizzaDiavola);
+
+        // Calcolo del prezzo totale
+        Ordinazione ordinazione = new Ordinazione(menu);
+        int prezzoTotale = ordinazione.calcoloPrezzoTot();
+
+        // Stampa del menu
+        System.out.println("Menu:");
+        for (Piatto p : menu.getPiatti()) {
+            System.out.println("Nome: " + p.getNome());
+            System.out.println("Ingredienti: " + String.join(", ", p.getIngredienti()));
+            System.out.println("Prezzo: " + p.getPrezzo() + " euro\n");
+        }
+
+        // Stampa del prezzo totale
+        System.out.println("Prezzo totale: " + prezzoTotale + " euro");
+    }
+}
